@@ -28,7 +28,6 @@
 		C8B3D90B195E6791006213F3 /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B3D90A195E6791006213F3 /* NSObject+KVO.m */; };
 		C8CCB1E7195E715B00B96378 /* XMMMAddItemHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8CCB1E6195E715B00B96378 /* XMMMAddItemHeaderView.xib */; };
 		C8CCB1EA195E717A00B96378 /* XMMMAddItemHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CCB1E9195E717A00B96378 /* XMMMAddItemHeaderView.m */; };
-		C8FE353D195E6E440047A210 /* XMMMItemAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FE353C195E6E440047A210 /* XMMMItemAddCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,8 +73,6 @@
 		C8CCB1E6195E715B00B96378 /* XMMMAddItemHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMMMAddItemHeaderView.xib; sourceTree = "<group>"; };
 		C8CCB1E8195E717A00B96378 /* XMMMAddItemHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMMMAddItemHeaderView.h; sourceTree = "<group>"; };
 		C8CCB1E9195E717A00B96378 /* XMMMAddItemHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMMAddItemHeaderView.m; sourceTree = "<group>"; };
-		C8FE353B195E6E440047A210 /* XMMMItemAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMMMItemAddCell.h; sourceTree = "<group>"; };
-		C8FE353C195E6E440047A210 /* XMMMItemAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMMItemAddCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,8 +150,6 @@
 				C8B3D906195E6102006213F3 /* XMMMShoppingItem.m */,
 				C8B3D909195E6791006213F3 /* NSObject+KVO.h */,
 				C8B3D90A195E6791006213F3 /* NSObject+KVO.m */,
-				C8FE353B195E6E440047A210 /* XMMMItemAddCell.h */,
-				C8FE353C195E6E440047A210 /* XMMMItemAddCell.m */,
 				C8CCB1E8195E717A00B96378 /* XMMMAddItemHeaderView.h */,
 				C8CCB1E9195E717A00B96378 /* XMMMAddItemHeaderView.m */,
 				C8CCB1E6195E715B00B96378 /* XMMMAddItemHeaderView.xib */,
@@ -328,7 +323,6 @@
 				C8B3D8D7195E5EDB006213F3 /* main.m in Sources */,
 				C8B3D90B195E6791006213F3 /* NSObject+KVO.m in Sources */,
 				C8B3D901195E5F18006213F3 /* XMMMListViewController.m in Sources */,
-				C8FE353D195E6E440047A210 /* XMMMItemAddCell.m in Sources */,
 				C8B3D904195E60B7006213F3 /* XMMMItemPersistenceService.m in Sources */,
 				C8B3D907195E6102006213F3 /* XMMMShoppingItem.m in Sources */,
 				C8B3D8E1195E5EDB006213F3 /* XMMMViewController.m in Sources */,

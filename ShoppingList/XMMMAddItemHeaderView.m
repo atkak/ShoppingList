@@ -8,24 +8,29 @@
 
 #import "XMMMAddItemHeaderView.h"
 
+@interface XMMMAddItemHeaderView ()
+
+@property (weak, nonatomic) IBOutlet UIToolbar *inputAccessoryToolbar;
+
+- (IBAction)doneButtonDidTouch:(id)sender;
+
+@end
+
 @implementation XMMMAddItemHeaderView
 
-- (id)initWithFrame:(CGRect)frame
+- (void)awakeFromNib
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    self.backgroundView = [UIView new];
+    self.backgroundView.backgroundColor = [UIColor lightGrayColor];
+    
+    self.textField.inputAccessoryView = self.inputAccessoryToolbar;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (IBAction)doneButtonDidTouch:(id)sender
 {
-    // Drawing code
+    if ([self.delegate respondsToSelector:@selector(addItemHeaderInputAccessoryViewDidTouchDone)]) {
+        [self.delegate addItemHeaderInputAccessoryViewDidTouchDone];
+    }
 }
-*/
 
 @end

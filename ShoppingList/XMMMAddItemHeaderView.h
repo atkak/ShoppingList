@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class XMMMAddItemHeaderView;
+
+@protocol XMMMAddItemHeaderInputAccessoryViewDelegate <NSObject>
+
+@optional
+- (void)addItemHeaderInputAccessoryViewDidTouchDone;
+
+@end
+
 @interface XMMMAddItemHeaderView : UITableViewHeaderFooterView
+
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+
+@property (weak, nonatomic) id <XMMMAddItemHeaderInputAccessoryViewDelegate> delegate;
 
 @end

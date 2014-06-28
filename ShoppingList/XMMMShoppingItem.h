@@ -15,5 +15,6 @@
 
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSDate *createdDate;
+@property (nonatomic) BOOL completed;
 
 @end

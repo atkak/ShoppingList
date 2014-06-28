@@ -19,6 +19,7 @@
     if (self) {
         _name = name;
         _createdDate = createdDate;
+        _completed = NO;
     }
     
     return self;
