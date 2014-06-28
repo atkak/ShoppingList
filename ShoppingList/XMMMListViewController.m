@@ -11,26 +11,29 @@
 #import "XMMMShoppingItem.h"
 #import "XMMMAddItemHeaderView.h"
 #import "XMMMItemListTableViewCell.h"
+#import "UIView+UINib.h"
 
 @interface XMMMListViewController () <UITextFieldDelegate, XMMMAddItemHeaderInputAccessoryViewDelegate, RMSwipeTableViewCellDelegate>
 
 @property (nonatomic) NSMutableArray *items;
 @property (nonatomic) XMMMItemPersistenceService *itemService;
 
-@property (weak, nonatomic) IBOutlet XMMMAddItemHeaderView *addItemHeaderView;
+@property (nonatomic) XMMMAddItemHeaderView *addItemHeaderView;
 
 @end
 
 @implementation XMMMListViewController
 
+#pragma mark - Lifecycle
+
 - (void)loadView
 {
     [super loadView];
     
-    XMMMAddItemHeaderView *headerView = [[UINib nibWithNibName:@"XMMMAddItemHeaderView"
-                                                       bundle:nil] instantiateWithOwner:self options:nil][0];
-    self.tableView.tableHeaderView = headerView;
+    XMMMAddItemHeaderView *headerView = [XMMMAddItemHeaderView loadFromNib];
     self.addItemHeaderView = headerView;
+    self.addItemHeaderView.textField.delegate = self;
+    self.addItemHeaderView.delegate = self;
 }
 
 - (void)viewDidLoad
@@ -40,16 +43,16 @@
     self.items = [NSMutableArray new];
     self.itemService = [XMMMItemPersistenceService new];
     
-    self.addItemHeaderView.textField.delegate = self;
-    self.addItemHeaderView.textField.placeholder = NSLocalizedString(@"Add item here", nil);
-    self.addItemHeaderView.delegate = self;
+    self.title = NSLocalizedString(@"Items", nil);
     
-    [self.tableView registerClass:XMMMItemListTableViewCell.class forCellReuseIdentifier:@"CellIdentifier"];
+    [self.tableView registerClass:[XMMMItemListTableViewCell class]
+           forCellReuseIdentifier:@"CellIdentifier"];
+    self.tableView.separatorInset = UIEdgeInsetsZero;
     
     [self loadItems];
 }
 
-#pragma mark - UITableViewDelegate
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -76,9 +79,21 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 50.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44.0f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return self.addItemHeaderView;
 }
 
 #pragma mark - UITextFieldDelegate

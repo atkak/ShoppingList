@@ -7,10 +7,12 @@
 //
 
 #import "XMMMAddItemHeaderView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface XMMMAddItemHeaderView ()
 
 @property (weak, nonatomic) IBOutlet UIToolbar *inputAccessoryToolbar;
+@property (weak, nonatomic) IBOutlet UIView *textFieldBackgroundView;
 
 - (IBAction)doneButtonDidTouch:(id)sender;
 
@@ -21,9 +23,13 @@
 - (void)awakeFromNib
 {
     self.backgroundView = [UIView new];
-    self.backgroundView.backgroundColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
+    self.backgroundView.backgroundColor = [UIColor colorWithWhite:0.95f alpha:1.0f];
+    
+    self.textFieldBackgroundView.backgroundColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
+    self.textFieldBackgroundView.layer.cornerRadius = 4.0f;
     
     self.textField.inputAccessoryView = self.inputAccessoryToolbar;
+    self.textField.placeholder = NSLocalizedString(@"Enter item", nil);
 }
 
 - (IBAction)doneButtonDidTouch:(id)sender

@@ -10,17 +10,37 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="m7R-cT-npr">
-                    <rect key="frame" x="20" y="7" width="280" height="30"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4d-hw-l0e">
+                    <rect key="frame" x="10" y="8" width="300" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                </textField>
+                    <subviews>
+                        <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="m7R-cT-npr">
+                            <rect key="frame" x="5" y="5" width="290" height="18"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="m7R-cT-npr" firstAttribute="top" secondItem="B4d-hw-l0e" secondAttribute="top" constant="5" id="26Q-X5-zmn"/>
+                        <constraint firstAttribute="trailing" secondItem="m7R-cT-npr" secondAttribute="trailing" constant="5" id="7rM-gr-LZL"/>
+                        <constraint firstAttribute="bottom" secondItem="m7R-cT-npr" secondAttribute="bottom" constant="5" id="lzI-Ff-GRn"/>
+                        <constraint firstItem="m7R-cT-npr" firstAttribute="leading" secondItem="B4d-hw-l0e" secondAttribute="leading" constant="5" id="ntT-jl-asq"/>
+                    </constraints>
+                </view>
             </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="B4d-hw-l0e" secondAttribute="bottom" constant="8" id="45G-K7-f7F"/>
+                <constraint firstItem="B4d-hw-l0e" firstAttribute="top" secondItem="oPi-ZR-TMh" secondAttribute="top" constant="8" id="EMK-MH-vUX"/>
+                <constraint firstAttribute="trailing" secondItem="B4d-hw-l0e" secondAttribute="trailing" constant="10" id="YfU-8v-6um"/>
+                <constraint firstItem="B4d-hw-l0e" firstAttribute="leading" secondItem="oPi-ZR-TMh" secondAttribute="leading" constant="10" id="iVE-C8-v6O"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="inputAccessoryToolbar" destination="lMd-3W-Lho" id="Y7U-bp-ibf"/>
                 <outlet property="textField" destination="m7R-cT-npr" id="rdw-m8-wLG"/>
+                <outlet property="textFieldBackgroundView" destination="B4d-hw-l0e" id="FfE-WK-QPg"/>
             </connections>
         </view>
         <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="lMd-3W-Lho">

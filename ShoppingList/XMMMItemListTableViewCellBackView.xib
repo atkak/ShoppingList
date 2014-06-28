@@ -20,35 +20,37 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tm3-UK-1w1">
-                    <rect key="frame" x="10" y="20" width="75" height="21"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_check" translatesAutoresizingMaskIntoConstraints="NO" id="Xgz-jr-L3d">
+                    <rect key="frame" x="18" y="18" width="25" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qM4-2O-bdn">
-                    <rect key="frame" x="261" y="20" width="49" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="uY7-Qf-VCO"/>
+                        <constraint firstAttribute="width" constant="25" id="v0q-8m-JIB"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cross" translatesAutoresizingMaskIntoConstraints="NO" id="EBf-Vx-dD9">
+                    <rect key="frame" x="282" y="20" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="dMH-6o-89I"/>
+                        <constraint firstAttribute="height" constant="20" id="gqF-vg-Cpo"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="XDp-UL-GYD" secondAttribute="bottom" id="6iB-b1-HpS"/>
                 <constraint firstAttribute="trailing" secondItem="0NB-VJ-3Wd" secondAttribute="trailing" id="D6S-Sw-lkC"/>
                 <constraint firstAttribute="bottom" secondItem="0NB-VJ-3Wd" secondAttribute="bottom" id="DPj-KC-tHf"/>
+                <constraint firstItem="Xgz-jr-L3d" firstAttribute="leading" secondItem="Qrr-jy-OEF" secondAttribute="leading" constant="18" id="I2A-UQ-cbq"/>
                 <constraint firstItem="XDp-UL-GYD" firstAttribute="top" secondItem="Qrr-jy-OEF" secondAttribute="top" id="L0n-CZ-aAr" customClass="x"/>
+                <constraint firstAttribute="trailing" secondItem="EBf-Vx-dD9" secondAttribute="trailing" constant="18" id="N8T-em-IkX"/>
                 <constraint firstItem="XDp-UL-GYD" firstAttribute="leading" secondItem="Qrr-jy-OEF" secondAttribute="leading" id="QeB-X6-J9d"/>
                 <constraint firstItem="0NB-VJ-3Wd" firstAttribute="top" secondItem="Qrr-jy-OEF" secondAttribute="top" id="RyQ-sM-Xoe"/>
-                <constraint firstAttribute="trailing" secondItem="qM4-2O-bdn" secondAttribute="trailing" constant="10" id="TJb-qt-q5i"/>
+                <constraint firstAttribute="centerY" secondItem="EBf-Vx-dD9" secondAttribute="centerY" id="ZEE-Zc-snI"/>
                 <constraint firstItem="0NB-VJ-3Wd" firstAttribute="leading" secondItem="XDp-UL-GYD" secondAttribute="trailing" id="arz-cG-aWV"/>
-                <constraint firstItem="Tm3-UK-1w1" firstAttribute="leading" secondItem="Qrr-jy-OEF" secondAttribute="leading" constant="10" id="eII-SN-OAg"/>
-                <constraint firstAttribute="centerY" secondItem="qM4-2O-bdn" secondAttribute="centerY" id="haF-sd-y0f"/>
-                <constraint firstAttribute="centerY" secondItem="Tm3-UK-1w1" secondAttribute="centerY" id="sTf-ag-ZG5"/>
                 <constraint firstItem="0NB-VJ-3Wd" firstAttribute="width" secondItem="XDp-UL-GYD" secondAttribute="width" id="twS-1A-BGk"/>
+                <constraint firstAttribute="centerY" secondItem="Xgz-jr-L3d" secondAttribute="centerY" id="v2I-sf-pZr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -57,4 +59,8 @@
             </connections>
         </view>
     </objects>
+    <resources>
+        <image name="icon_check" width="65" height="50"/>
+        <image name="icon_cross" width="50" height="50"/>
+    </resources>
 </document>

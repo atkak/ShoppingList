@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <RMSwipeTableViewCell.h>
 
-static const CGFloat PanDistanceThresholdComplete = 60.0f;
-static const CGFloat PanDistanceThresholdDelete = 70.0f;
+static const CGFloat PanDistanceThresholdComplete = 50.0f;
+static const CGFloat PanDistanceThresholdDelete = 60.0f;
 
 @interface XMMMItemListTableViewCell : RMSwipeTableViewCell
 
