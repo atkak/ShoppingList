@@ -1,0 +1,14 @@
+PODS:
+  - Objective-LevelDB (2.0.7):
+    - Objective-LevelDB/leveldb
+    - Objective-LevelDB/leveldb
+  - Objective-LevelDB/leveldb (2.0.7):
+    - Objective-LevelDB/leveldb
+
+DEPENDENCIES:
+  - Objective-LevelDB
+
+SPEC CHECKSUMS:
+  Objective-LevelDB: 2efb63dc8c9fb638656d3f54a46fa3b6c6818ea1
+
+COCOAPODS: 0.33.1
