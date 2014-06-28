@@ -15,4 +15,6 @@
 
 - (void)saveItem:(XMMMShoppingItem *)item;
 
+- (void)removeItem:(XMMMShoppingItem *)item;
+
 @end

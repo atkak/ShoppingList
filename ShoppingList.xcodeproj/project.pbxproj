@@ -28,6 +28,10 @@
 		C8B3D90B195E6791006213F3 /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B3D90A195E6791006213F3 /* NSObject+KVO.m */; };
 		C8CCB1E7195E715B00B96378 /* XMMMAddItemHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8CCB1E6195E715B00B96378 /* XMMMAddItemHeaderView.xib */; };
 		C8CCB1EA195E717A00B96378 /* XMMMAddItemHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CCB1E9195E717A00B96378 /* XMMMAddItemHeaderView.m */; };
+		C8E54550195E91A20050B870 /* XMMMItemListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E5454F195E91A20050B870 /* XMMMItemListTableViewCell.m */; };
+		C8E54553195E9B1E0050B870 /* XMMMItemListTableViewCellBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E54552195E9B1E0050B870 /* XMMMItemListTableViewCellBackView.m */; };
+		C8E54555195E9B360050B870 /* XMMMItemListTableViewCellBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8E54554195E9B360050B870 /* XMMMItemListTableViewCellBackView.xib */; };
+		C8E54558195E9D130050B870 /* UIView+UINib.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E54557195E9D130050B870 /* UIView+UINib.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,13 @@
 		C8CCB1E6195E715B00B96378 /* XMMMAddItemHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMMMAddItemHeaderView.xib; sourceTree = "<group>"; };
 		C8CCB1E8195E717A00B96378 /* XMMMAddItemHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMMMAddItemHeaderView.h; sourceTree = "<group>"; };
 		C8CCB1E9195E717A00B96378 /* XMMMAddItemHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMMAddItemHeaderView.m; sourceTree = "<group>"; };
+		C8E5454E195E91A20050B870 /* XMMMItemListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMMMItemListTableViewCell.h; sourceTree = "<group>"; };
+		C8E5454F195E91A20050B870 /* XMMMItemListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMMItemListTableViewCell.m; sourceTree = "<group>"; };
+		C8E54551195E9B1E0050B870 /* XMMMItemListTableViewCellBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMMMItemListTableViewCellBackView.h; sourceTree = "<group>"; };
+		C8E54552195E9B1E0050B870 /* XMMMItemListTableViewCellBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMMItemListTableViewCellBackView.m; sourceTree = "<group>"; };
+		C8E54554195E9B360050B870 /* XMMMItemListTableViewCellBackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMMMItemListTableViewCellBackView.xib; sourceTree = "<group>"; };
+		C8E54556195E9D130050B870 /* UIView+UINib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UINib.h"; sourceTree = "<group>"; };
+		C8E54557195E9D130050B870 /* UIView+UINib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UINib.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +164,13 @@
 				C8CCB1E8195E717A00B96378 /* XMMMAddItemHeaderView.h */,
 				C8CCB1E9195E717A00B96378 /* XMMMAddItemHeaderView.m */,
 				C8CCB1E6195E715B00B96378 /* XMMMAddItemHeaderView.xib */,
+				C8E5454E195E91A20050B870 /* XMMMItemListTableViewCell.h */,
+				C8E5454F195E91A20050B870 /* XMMMItemListTableViewCell.m */,
+				C8E54551195E9B1E0050B870 /* XMMMItemListTableViewCellBackView.h */,
+				C8E54552195E9B1E0050B870 /* XMMMItemListTableViewCellBackView.m */,
+				C8E54554195E9B360050B870 /* XMMMItemListTableViewCellBackView.xib */,
+				C8E54556195E9D130050B870 /* UIView+UINib.h */,
+				C8E54557195E9D130050B870 /* UIView+UINib.m */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -268,6 +286,7 @@
 				C8B3D8E3195E5EDB006213F3 /* Images.xcassets in Resources */,
 				C8CCB1E7195E715B00B96378 /* XMMMAddItemHeaderView.xib in Resources */,
 				C8B3D8D5195E5EDB006213F3 /* InfoPlist.strings in Resources */,
+				C8E54555195E9B360050B870 /* XMMMItemListTableViewCellBackView.xib in Resources */,
 				C8B3D8DE195E5EDB006213F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,11 +340,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8B3D8D7195E5EDB006213F3 /* main.m in Sources */,
+				C8E54553195E9B1E0050B870 /* XMMMItemListTableViewCellBackView.m in Sources */,
 				C8B3D90B195E6791006213F3 /* NSObject+KVO.m in Sources */,
 				C8B3D901195E5F18006213F3 /* XMMMListViewController.m in Sources */,
 				C8B3D904195E60B7006213F3 /* XMMMItemPersistenceService.m in Sources */,
 				C8B3D907195E6102006213F3 /* XMMMShoppingItem.m in Sources */,
+				C8E54550195E91A20050B870 /* XMMMItemListTableViewCell.m in Sources */,
 				C8B3D8E1195E5EDB006213F3 /* XMMMViewController.m in Sources */,
+				C8E54558195E9D130050B870 /* UIView+UINib.m in Sources */,
 				C8B3D8DB195E5EDB006213F3 /* XMMMAppDelegate.m in Sources */,
 				C8CCB1EA195E717A00B96378 /* XMMMAddItemHeaderView.m in Sources */,
 			);

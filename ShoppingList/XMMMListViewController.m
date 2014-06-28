@@ -10,8 +10,9 @@
 #import "XMMMItemPersistenceService.h"
 #import "XMMMShoppingItem.h"
 #import "XMMMAddItemHeaderView.h"
+#import "XMMMItemListTableViewCell.h"
 
-@interface XMMMListViewController () <UITextFieldDelegate, XMMMAddItemHeaderInputAccessoryViewDelegate>
+@interface XMMMListViewController () <UITextFieldDelegate, XMMMAddItemHeaderInputAccessoryViewDelegate, RMSwipeTableViewCellDelegate>
 
 @property (nonatomic) NSMutableArray *items;
 @property (nonatomic) XMMMItemPersistenceService *itemService;
@@ -40,7 +41,10 @@
     self.itemService = [XMMMItemPersistenceService new];
     
     self.addItemHeaderView.textField.delegate = self;
+    self.addItemHeaderView.textField.placeholder = NSLocalizedString(@"Add item here", nil);
     self.addItemHeaderView.delegate = self;
+    
+    [self.tableView registerClass:XMMMItemListTableViewCell.class forCellReuseIdentifier:@"CellIdentifier"];
     
     [self loadItems];
 }
@@ -59,28 +63,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CellIdentifier"
-                                                                 forIndexPath:indexPath];
+    XMMMItemListTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CellIdentifier"
+                                                                           forIndexPath:indexPath];
     
     XMMMShoppingItem *item = self.items[indexPath.row];
     
     cell.textLabel.text = item.name;
-    if (item.completed) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
+    cell.completed = item.completed;
+    
+    cell.delegate = self;
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    XMMMShoppingItem *item = self.items[indexPath.row];
-    item.completed = !item.completed;
-    [self.itemService saveItem:item];
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath]
-                          withRowAnimation:UITableViewRowAnimationNone];
+    return 50.0f;
 }
 
 #pragma mark - UITextFieldDelegate
@@ -90,10 +88,48 @@
     if (self.addItemHeaderView.textField.text.length > 0) {
         [self addShoppingItemForName:self.addItemHeaderView.textField.text];
         self.addItemHeaderView.textField.text = nil;
-        [self.tableView reloadData];
+        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]]
+                              withRowAnimation:UITableViewRowAnimationFade];
     }
     
     return NO;
+}
+
+#pragma mark - RMSwipeTableViewCellDelegate
+
+- (void)swipeTableViewCellWillResetState:(RMSwipeTableViewCell *)swipeTableViewCell
+                               fromPoint:(CGPoint)point
+                               animation:(RMSwipeTableViewCellAnimationType)animation
+                                velocity:(CGPoint)velocity
+{
+    if (point.x <= -PanDistanceThresholdDelete) {
+        XMMMItemListTableViewCell *cell = (XMMMItemListTableViewCell *)swipeTableViewCell;
+        
+        [cell performRemoveItemAnimationWithCompletion:^{
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:swipeTableViewCell];
+            XMMMShoppingItem *item = self.items[indexPath.row];
+            [self.itemService removeItem:item];
+            [self.items removeObject:item];
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath]
+                                  withRowAnimation:UITableViewRowAnimationFade];
+        }];
+    }
+}
+
+- (void)swipeTableViewCellDidResetState:(RMSwipeTableViewCell *)swipeTableViewCell
+                              fromPoint:(CGPoint)point
+                              animation:(RMSwipeTableViewCellAnimationType)animation
+                               velocity:(CGPoint)velocity
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:swipeTableViewCell];
+    XMMMShoppingItem *item = self.items[indexPath.row];
+    
+    if (point.x >= PanDistanceThresholdComplete) {
+        item.completed = !item.completed;
+        [self.itemService saveItem:item];
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath]
+                              withRowAnimation:UITableViewRowAnimationNone];
+    }
 }
 
 #pragma mark - XMMMAddItemHeaderInputAccessoryViewDelegate
@@ -103,7 +139,8 @@
     if (self.addItemHeaderView.textField.text.length > 0) {
         [self addShoppingItemForName:self.addItemHeaderView.textField.text];
         self.addItemHeaderView.textField.text = nil;
-        [self.tableView reloadData];
+        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]]
+                              withRowAnimation:UITableViewRowAnimationFade];
     }
     
     [self.addItemHeaderView.textField resignFirstResponder];

@@ -21,7 +21,7 @@
 - (void)awakeFromNib
 {
     self.backgroundView = [UIView new];
-    self.backgroundView.backgroundColor = [UIColor lightGrayColor];
+    self.backgroundView.backgroundColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
     
     self.textField.inputAccessoryView = self.inputAccessoryToolbar;
 }

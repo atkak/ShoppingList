@@ -51,4 +51,10 @@
     [self.db setObject:item forKey:key];
 }
 
+- (void)removeItem:(XMMMShoppingItem *)item
+{
+    NSString *key = [NSString stringWithFormat:@"%f", item.createdDate.timeIntervalSince1970];
+    [self.db removeObjectForKey:key];
+}
+
 @end
