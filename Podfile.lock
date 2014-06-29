@@ -5,13 +5,16 @@ PODS:
   - Objective-LevelDB/leveldb (2.0.7):
     - Objective-LevelDB/leveldb
   - RMSwipeTableViewCell (0.6)
+  - UIActionSheet+Blocks (0.8.1)
 
 DEPENDENCIES:
   - Objective-LevelDB
   - RMSwipeTableViewCell
+  - UIActionSheet+Blocks
 
 SPEC CHECKSUMS:
   Objective-LevelDB: 2efb63dc8c9fb638656d3f54a46fa3b6c6818ea1
   RMSwipeTableViewCell: 150021ada2d86b21db04556f08351462bd58919b
+  UIActionSheet+Blocks: c8b9c02f3d08964e8f7a4202f004a639c15eab80
 
 COCOAPODS: 0.33.1

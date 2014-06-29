@@ -12,6 +12,7 @@
 #import "XMMMAddItemView.h"
 #import "XMMMItemListTableViewCell.h"
 #import "UIView+UINib.h"
+#import <UIActionSheet+Blocks/UIActionSheet+Blocks.h>
 
 @interface XMMMItemListViewController () <UITextFieldDelegate, XMMMAddItemHeaderInputAccessoryViewDelegate, RMSwipeTableViewCellDelegate>
 
@@ -22,6 +23,9 @@
 @property (weak, nonatomic) UILabel *itemCountLabel;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *itemCountLabelButton;
+
+- (IBAction)removeItemButtonDidTouch:(id)sender;
+- (IBAction)actionButtonDidTouch:(id)sender;
 
 @end
 
@@ -166,6 +170,34 @@
     [self.addItemHeaderView.textField resignFirstResponder];
 }
 
+#pragma mark - Handler
+
+- (IBAction)removeItemButtonDidTouch:(id)sender
+{
+    UIActionSheet *actionSheet = [UIActionSheet showInView:self.view
+                                                  withTitle:nil
+                                          cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                                     destructiveButtonTitle:NSLocalizedString(@"Remove All Items", nil)
+                                          otherButtonTitles:@[NSLocalizedString(@"Remove Completed Items", nil)]
+                                                   tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+                                                       switch (buttonIndex) {
+                                                           case 0:
+                                                               [self removeAllItems];
+                                                               break;
+                                                           case 1:
+                                                               [self removeCompletedItems];
+                                                               break;
+                                                           default:
+                                                               break;
+                                                       }
+                                                   }];
+}
+
+- (IBAction)actionButtonDidTouch:(id)sender
+{
+    
+}
+
 #pragma mark - Private
 
 - (void)loadItems
@@ -182,6 +214,32 @@
                                                         createdDate:[NSDate date]];
     [self.itemService saveItem:item];
     [self.items insertObject:item atIndex:0];
+}
+
+- (void)removeAllItems
+{
+    [self.itemService removeAllItems];
+    [self.items removeAllObjects];
+    
+    [self.tableView reloadData];
+}
+
+- (void)removeCompletedItems
+{
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        XMMMShoppingItem *item = evaluatedObject;
+        return item.completed;
+    }];
+    
+    NSArray *completedItems = [self.items filteredArrayUsingPredicate:predicate];
+    
+    [self.itemService removeItems:completedItems];
+    
+    for (XMMMShoppingItem *item in completedItems) {
+        [self.items removeObject:item];
+    }
+    
+    [self.tableView reloadData];
 }
 
 @end

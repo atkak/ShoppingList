@@ -4,6 +4,7 @@
 target "ShoppingList" do
   pod 'Objective-LevelDB', :inhibit_warnings => true
   pod 'RMSwipeTableViewCell'
+  pod 'UIActionSheet+Blocks'
 end
 
 target "ShoppingListTests" do

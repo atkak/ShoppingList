@@ -37,11 +37,19 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem systemItem="trash" id="eKW-vV-WHC"/>
+                        <barButtonItem systemItem="trash" id="eKW-vV-WHC">
+                            <connections>
+                                <action selector="removeItemButtonDidTouch:" destination="4o9-Gp-ZV2" id="bal-d8-EgZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Fhh-l6-l5R"/>
                         <barButtonItem title="Item" id="vfN-ue-fed"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="1zV-Kj-kht"/>
-                        <barButtonItem systemItem="action" id="WzD-DH-G0B"/>
+                        <barButtonItem systemItem="action" id="WzD-DH-G0B">
+                            <connections>
+                                <action selector="actionButtonDidTouch:" destination="4o9-Gp-ZV2" id="i7h-nY-yuD"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Root View Controller" id="rh7-r7-oKF"/>
                     <connections>

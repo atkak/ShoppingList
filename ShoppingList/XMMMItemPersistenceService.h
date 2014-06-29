@@ -17,4 +17,8 @@
 
 - (void)removeItem:(XMMMShoppingItem *)item;
 
+- (void)removeItems:(NSArray *)items;
+
+- (void)removeAllItems;
+
 @end

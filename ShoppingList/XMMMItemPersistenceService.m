@@ -57,4 +57,21 @@
     [self.db removeObjectForKey:key];
 }
 
+- (void)removeItems:(NSArray *)items
+{
+    NSMutableArray *keys = [NSMutableArray new];
+    
+    for (XMMMShoppingItem *item in items) {
+        NSString *key = [NSString stringWithFormat:@"%f", item.createdDate.timeIntervalSince1970];
+        [keys addObject:key];
+    }
+    
+    [self.db removeObjectsForKeys:keys];
+}
+
+- (void)removeAllItems
+{
+    [self.db removeAllObjects];
+}
+
 @end
