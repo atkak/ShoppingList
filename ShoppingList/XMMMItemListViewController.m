@@ -198,7 +198,21 @@
 
 - (IBAction)actionButtonDidTouch:(id)sender
 {
-    
+    [UIActionSheet showInView:self.view
+                    withTitle:nil
+            cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+       destructiveButtonTitle:nil
+            otherButtonTitles:@[NSLocalizedString(@"Add Items from Clipboard", nil)]
+                     tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+                         switch (buttonIndex) {
+                             case 0:
+                                 [self addShoppingItemsFromPasteboard];
+                                 break;
+                                 
+                             default:
+                                 break;
+                         }
+                     }];
 }
 
 #pragma mark - Private
@@ -221,15 +235,31 @@
 
 - (void)removeAllItems
 {
+    if (self.items.count == 0) {
+        return;
+    }
+    
     [self.itemService removeAllItems];
+    
+    NSMutableArray *indexPaths = [NSMutableArray new];
+    for (NSInteger i = 0; i < self.items.count; i++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+        [indexPaths addObject:indexPath];
+    }
+    
     [self.items removeAllObjects];
     
-    [self.tableView reloadData];
+    [self.tableView deleteRowsAtIndexPaths:indexPaths
+                          withRowAnimation:UITableViewRowAnimationFade];
     [self refreshItemsCount];
 }
 
 - (void)removeCompletedItems
 {
+    if (self.items.count == 0) {
+        return;
+    }
+    
     NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
         XMMMShoppingItem *item = evaluatedObject;
         return item.completed;
@@ -237,19 +267,54 @@
     
     NSArray *completedItems = [self.items filteredArrayUsingPredicate:predicate];
     
+    if (completedItems.count == 0) {
+        return;
+    }
+    
     [self.itemService removeItems:completedItems];
+    
+    NSMutableArray *indexPaths = [NSMutableArray new];
+    for (XMMMShoppingItem *item in completedItems) {
+        NSInteger index = [self.items indexOfObject:item];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+        [indexPaths addObject:indexPath];
+    }
     
     for (XMMMShoppingItem *item in completedItems) {
         [self.items removeObject:item];
     }
     
-    [self.tableView reloadData];
+    [self.tableView deleteRowsAtIndexPaths:indexPaths
+                          withRowAnimation:UITableViewRowAnimationFade];
     [self refreshItemsCount];
 }
 
 - (void)refreshItemsCount
 {
     self.itemCountLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%zd items", nil), self.items.count];
+}
+
+- (void)addShoppingItemsFromPasteboard
+{
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    NSString *string = pasteboard.string;
+    string = [string stringByReplacingOccurrencesOfString:@"\r\n"
+                                               withString:@"\n"];
+    NSArray *strings = [string componentsSeparatedByString:@"\n"];
+    
+    for (NSString *name in strings) {
+        [self addShoppingItemForName:name];
+    }
+    
+    NSMutableArray *indexPaths = [NSMutableArray new];
+    for (NSInteger i = 0; i < strings.count; i++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+        [indexPaths addObject:indexPath];
+    }
+    
+    [self.tableView insertRowsAtIndexPaths:indexPaths
+                          withRowAnimation:UITableViewRowAnimationFade];
+    [self refreshItemsCount];
 }
 
 @end
