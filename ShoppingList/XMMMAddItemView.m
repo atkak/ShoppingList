@@ -1,15 +1,15 @@
 //
-//  XMMMAddItemHeaderView.m
+//  XMMMAddItemView.m
 //  ShoppingList
 //
 //  Created by KAKEGAWA Atsushi on 2014/06/28.
 //  Copyright (c) 2014年 KAKEGAWA Atsushi. All rights reserved.
 //
 
-#import "XMMMAddItemHeaderView.h"
+#import "XMMMAddItemView.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface XMMMAddItemHeaderView ()
+@interface XMMMAddItemView ()
 
 @property (weak, nonatomic) IBOutlet UIView *textFieldBackgroundView;
 @property (weak, nonatomic) IBOutlet UIView *inputAccessoryView;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation XMMMAddItemHeaderView
+@implementation XMMMAddItemView
 
 - (void)awakeFromNib
 {

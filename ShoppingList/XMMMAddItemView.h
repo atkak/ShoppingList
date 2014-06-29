@@ -1,5 +1,5 @@
 //
-//  XMMMAddItemHeaderView.h
+//  XMMMAddItemView.h
 //  ShoppingList
 //
 //  Created by KAKEGAWA Atsushi on 2014/06/28.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class XMMMAddItemHeaderView;
+@class XMMMAddItemView;
 
 @protocol XMMMAddItemHeaderInputAccessoryViewDelegate <NSObject>
 
@@ -17,7 +17,7 @@
 
 @end
 
-@interface XMMMAddItemHeaderView : UITableViewHeaderFooterView
+@interface XMMMAddItemView : UIView
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 

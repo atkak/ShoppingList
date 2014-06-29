@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XMMMListViewController : UITableViewController
+@interface XMMMItemListViewController : UITableViewController
 
 @end

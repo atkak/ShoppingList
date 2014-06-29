@@ -6,26 +6,26 @@
 //  Copyright (c) 2014年 KAKEGAWA Atsushi. All rights reserved.
 //
 
-#import "XMMMListViewController.h"
+#import "XMMMItemListViewController.h"
 #import "XMMMItemPersistenceService.h"
 #import "XMMMShoppingItem.h"
-#import "XMMMAddItemHeaderView.h"
+#import "XMMMAddItemView.h"
 #import "XMMMItemListTableViewCell.h"
 #import "UIView+UINib.h"
 
-@interface XMMMListViewController () <UITextFieldDelegate, XMMMAddItemHeaderInputAccessoryViewDelegate, RMSwipeTableViewCellDelegate>
+@interface XMMMItemListViewController () <UITextFieldDelegate, XMMMAddItemHeaderInputAccessoryViewDelegate, RMSwipeTableViewCellDelegate>
 
 @property (nonatomic) NSMutableArray *items;
 @property (nonatomic) XMMMItemPersistenceService *itemService;
 
-@property (nonatomic) XMMMAddItemHeaderView *addItemHeaderView;
+@property (nonatomic) XMMMAddItemView *addItemHeaderView;
 @property (weak, nonatomic) UILabel *itemCountLabel;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *itemCountLabelButton;
 
 @end
 
-@implementation XMMMListViewController
+@implementation XMMMItemListViewController
 
 #pragma mark - Lifecycle
 
@@ -33,7 +33,7 @@
 {
     [super loadView];
     
-    XMMMAddItemHeaderView *headerView = [XMMMAddItemHeaderView loadFromNib];
+    XMMMAddItemView *headerView = [XMMMAddItemView loadFromNib];
     self.addItemHeaderView = headerView;
     self.addItemHeaderView.textField.delegate = self;
     self.addItemHeaderView.delegate = self;
