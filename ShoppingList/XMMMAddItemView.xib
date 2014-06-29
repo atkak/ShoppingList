@@ -15,7 +15,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="m7R-cT-npr">
-                            <rect key="frame" x="5" y="5" width="290" height="18"/>
+                            <rect key="frame" x="10" y="5" width="280" height="18"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -24,9 +24,9 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="m7R-cT-npr" firstAttribute="top" secondItem="B4d-hw-l0e" secondAttribute="top" constant="5" id="26Q-X5-zmn"/>
-                        <constraint firstAttribute="trailing" secondItem="m7R-cT-npr" secondAttribute="trailing" constant="5" id="7rM-gr-LZL"/>
+                        <constraint firstAttribute="trailing" secondItem="m7R-cT-npr" secondAttribute="trailing" constant="10" id="7rM-gr-LZL"/>
                         <constraint firstAttribute="bottom" secondItem="m7R-cT-npr" secondAttribute="bottom" constant="5" id="lzI-Ff-GRn"/>
-                        <constraint firstItem="m7R-cT-npr" firstAttribute="leading" secondItem="B4d-hw-l0e" secondAttribute="leading" constant="5" id="ntT-jl-asq"/>
+                        <constraint firstItem="m7R-cT-npr" firstAttribute="leading" secondItem="B4d-hw-l0e" secondAttribute="leading" constant="10" id="ntT-jl-asq"/>
                     </constraints>
                 </view>
             </subviews>
