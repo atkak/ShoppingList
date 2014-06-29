@@ -12,7 +12,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [UIView appearance].tintColor = [UIColor colorWithRed:(float)0x97 / 0xff green:(float)0xe6 / 0xff blue:(float)0x7b / 0xff alpha:1.0f];
+    [UIView appearance].tintColor = [UIColor colorWithRed:(float)0xad / 0xff green:(float)0xd9 / 0xff blue:(float)0x4c / 0xff alpha:1.0f];
     
     return YES;
 }

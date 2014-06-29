@@ -33,7 +33,7 @@
 - (void)configureSubviews
 {
     self.completeBackgroundView.alpha = 0.0f;
-    self.completeBackgroundView.backgroundColor = [UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
+    self.completeBackgroundView.backgroundColor = [UIColor colorWithRed:0xad / 255.0 green:0xd9 / 255.0 blue:0x4c / 255.0 alpha:1.0];
     self.deleteBackgroundView.alpha = 0.0f;
     self.deleteBackgroundView.backgroundColor = [UIColor colorWithRed:232.0 / 255.0 green:61.0 / 255.0 blue:14.0 / 255.0 alpha:1.0];
 }
