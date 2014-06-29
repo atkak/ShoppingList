@@ -19,6 +19,9 @@
 @property (nonatomic) XMMMItemPersistenceService *itemService;
 
 @property (nonatomic) XMMMAddItemHeaderView *addItemHeaderView;
+@property (weak, nonatomic) UILabel *itemCountLabel;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *itemCountLabelButton;
 
 @end
 
@@ -34,6 +37,14 @@
     self.addItemHeaderView = headerView;
     self.addItemHeaderView.textField.delegate = self;
     self.addItemHeaderView.delegate = self;
+    
+    UILabel *itemCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 120.0f, 44.0f)];
+    itemCountLabel.textAlignment = NSTextAlignmentCenter;
+    itemCountLabel.textColor = [UIColor colorWithWhite:(float)0x55 / 0xff alpha:1.0f];
+    itemCountLabel.font = [UIFont systemFontOfSize:14.0f];
+    self.itemCountLabel = itemCountLabel;
+    
+    self.itemCountLabelButton.customView = itemCountLabel;
 }
 
 - (void)viewDidLoad
@@ -47,7 +58,11 @@
     
     [self.tableView registerClass:[XMMMItemListTableViewCell class]
            forCellReuseIdentifier:@"CellIdentifier"];
+    self.tableView.backgroundColor = [UIColor colorWithWhite:(float)0xf8 / 0xff alpha:1.0f];
+    self.tableView.separatorColor = [UIColor colorWithWhite:(float)0xdd / 0xff alpha:1.0f];
     self.tableView.separatorInset = UIEdgeInsetsZero;
+    
+    self.navigationItem.titleView = self.addItemHeaderView;
     
     [self loadItems];
 }
@@ -84,16 +99,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 50.0f;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 44.0f;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    return self.addItemHeaderView;
 }
 
 #pragma mark - UITextFieldDelegate
@@ -168,6 +173,7 @@
     NSArray *itemList = [self.itemService fetchItemList];
     self.items = [itemList mutableCopy];
     [self.tableView reloadData];
+    self.itemCountLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%zd items", nil), self.items.count];
 }
 
 - (void)addShoppingItemForName:(NSString *)name

@@ -36,7 +36,17 @@
                             <outlet property="delegate" destination="4o9-Gp-ZV2" id="f1g-qp-upm"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem systemItem="trash" id="eKW-vV-WHC"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Fhh-l6-l5R"/>
+                        <barButtonItem title="Item" id="vfN-ue-fed"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="1zV-Kj-kht"/>
+                        <barButtonItem systemItem="action" id="WzD-DH-G0B"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Root View Controller" id="rh7-r7-oKF"/>
+                    <connections>
+                        <outlet property="itemCountLabelButton" destination="vfN-ue-fed" id="TGy-9a-Zhb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUE-En-UYz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,10 +55,14 @@
         <!--Navigation Controller-->
         <scene sceneID="iCu-Cm-orU">
             <objects>
-                <navigationController definesPresentationContext="YES" id="Poq-CP-tST" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" toolbarHidden="NO" id="Poq-CP-tST" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="H4o-JE-fus">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="FHJ-q1-ONf">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="4o9-Gp-ZV2" kind="relationship" relationship="rootViewController" id="ht4-9n-rcg"/>
                     </connections>

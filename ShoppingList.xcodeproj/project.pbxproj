@@ -15,7 +15,6 @@
 		C8B3D8D7195E5EDB006213F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B3D8D6195E5EDB006213F3 /* main.m */; };
 		C8B3D8DB195E5EDB006213F3 /* XMMMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B3D8DA195E5EDB006213F3 /* XMMMAppDelegate.m */; };
 		C8B3D8DE195E5EDB006213F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B3D8DC195E5EDB006213F3 /* Main.storyboard */; };
-		C8B3D8E1195E5EDB006213F3 /* XMMMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B3D8E0195E5EDB006213F3 /* XMMMViewController.m */; };
 		C8B3D8E3195E5EDB006213F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8B3D8E2195E5EDB006213F3 /* Images.xcassets */; };
 		C8B3D8EA195E5EDB006213F3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B3D8E9195E5EDB006213F3 /* XCTest.framework */; };
 		C8B3D8EB195E5EDB006213F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B3D8CA195E5EDB006213F3 /* Foundation.framework */; };
@@ -58,8 +57,6 @@
 		C8B3D8D9195E5EDB006213F3 /* XMMMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMMMAppDelegate.h; sourceTree = "<group>"; };
 		C8B3D8DA195E5EDB006213F3 /* XMMMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMMMAppDelegate.m; sourceTree = "<group>"; };
 		C8B3D8DD195E5EDB006213F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C8B3D8DF195E5EDB006213F3 /* XMMMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMMMViewController.h; sourceTree = "<group>"; };
-		C8B3D8E0195E5EDB006213F3 /* XMMMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMMMViewController.m; sourceTree = "<group>"; };
 		C8B3D8E2195E5EDB006213F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C8B3D8E8195E5EDB006213F3 /* ShoppingListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8B3D8E9195E5EDB006213F3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -149,8 +146,6 @@
 				C8B3D8D9195E5EDB006213F3 /* XMMMAppDelegate.h */,
 				C8B3D8DA195E5EDB006213F3 /* XMMMAppDelegate.m */,
 				C8B3D8DC195E5EDB006213F3 /* Main.storyboard */,
-				C8B3D8DF195E5EDB006213F3 /* XMMMViewController.h */,
-				C8B3D8E0195E5EDB006213F3 /* XMMMViewController.m */,
 				C8B3D8E2195E5EDB006213F3 /* Images.xcassets */,
 				C8B3D8D1195E5EDB006213F3 /* Supporting Files */,
 				C8B3D8FF195E5F18006213F3 /* XMMMListViewController.h */,
@@ -346,7 +341,6 @@
 				C8B3D904195E60B7006213F3 /* XMMMItemPersistenceService.m in Sources */,
 				C8B3D907195E6102006213F3 /* XMMMShoppingItem.m in Sources */,
 				C8E54550195E91A20050B870 /* XMMMItemListTableViewCell.m in Sources */,
-				C8B3D8E1195E5EDB006213F3 /* XMMMViewController.m in Sources */,
 				C8E54558195E9D130050B870 /* UIView+UINib.m in Sources */,
 				C8B3D8DB195E5EDB006213F3 /* XMMMAppDelegate.m in Sources */,
 				C8CCB1EA195E717A00B96378 /* XMMMAddItemHeaderView.m in Sources */,

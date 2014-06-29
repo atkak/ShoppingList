@@ -37,7 +37,7 @@
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="XDp-UL-GYD" secondAttribute="bottom" id="6iB-b1-HpS"/>
                 <constraint firstAttribute="trailing" secondItem="0NB-VJ-3Wd" secondAttribute="trailing" id="D6S-Sw-lkC"/>
@@ -60,7 +60,7 @@
         </view>
     </objects>
     <resources>
-        <image name="icon_check" width="65" height="50"/>
-        <image name="icon_cross" width="50" height="50"/>
+        <image name="icon_check" width="68" height="47"/>
+        <image name="icon_cross" width="48" height="48"/>
     </resources>
 </document>

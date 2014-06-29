@@ -25,14 +25,14 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
+        self.imageView.image = [UIImage imageNamed:@"check_normal"];
+        self.backgroundView.backgroundColor = [UIColor colorWithWhite:((float)0xf8 / 0xff) alpha:1.0f];
+        self.contentView.backgroundColor = [UIColor colorWithWhite:((float)0xf8 / 0xff) alpha:1.0f];
+        self.textLabel.textColor = [UIColor colorWithWhite:((float)0x55 / 0xff) alpha:1.0f];
+        self.textLabel.backgroundColor = [UIColor clearColor];
     }
     
     return self;
-}
-
-- (void)awakeFromNib
-{
-    // Initialization code
 }
 
 - (void)prepareForReuse
@@ -43,6 +43,7 @@
     self.actualBackView.hidden = NO;
     self.actualBackView.completeBackgroundView.alpha = 0.0f;
     self.actualBackView.deleteBackgroundView.alpha = 0.0f;
+    self.imageView.image = [UIImage imageNamed:@"check_normal"];
 }
 
 - (void)animateContentViewForPoint:(CGPoint)point velocity:(CGPoint)velocity
@@ -97,8 +98,10 @@
     
     if (completed) {
         self.textLabel.textColor = [UIColor lightGrayColor];
+        self.imageView.image = [UIImage imageNamed:@"check_selected"];
     } else {
-        self.textLabel.textColor = [UIColor darkTextColor];
+        self.textLabel.textColor = [UIColor colorWithWhite:((float)0x55 / 0xff) alpha:1.0f];
+        self.imageView.image = [UIImage imageNamed:@"check_normal"];
     }
 }
 

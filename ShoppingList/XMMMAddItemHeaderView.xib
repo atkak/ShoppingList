@@ -38,7 +38,8 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="inputAccessoryToolbar" destination="lMd-3W-Lho" id="Y7U-bp-ibf"/>
+                <outlet property="doneButton" destination="fUJ-Da-OiR" id="fUu-VS-yID"/>
+                <outlet property="inputAccessoryView" destination="LKj-RR-zT1" id="2A2-Lm-mlA"/>
                 <outlet property="textField" destination="m7R-cT-npr" id="rdw-m8-wLG"/>
                 <outlet property="textFieldBackgroundView" destination="B4d-hw-l0e" id="FfE-WK-QPg"/>
             </connections>
@@ -48,12 +49,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
             <items>
                 <barButtonItem style="plain" systemItem="flexibleSpace" id="MvX-sC-2CN"/>
-                <barButtonItem systemItem="done" id="L1T-xD-q6f">
-                    <connections>
-                        <action selector="doneButtonDidTouch:" destination="oPi-ZR-TMh" id="jYq-Ug-PsM"/>
-                    </connections>
-                </barButtonItem>
+                <barButtonItem systemItem="done" id="L1T-xD-q6f"/>
             </items>
         </toolbar>
+        <view contentMode="scaleToFill" id="LKj-RR-zT1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUJ-Da-OiR">
+                    <rect key="frame" x="261" y="7" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="doneButtonDidTouch:" destination="oPi-ZR-TMh" eventType="touchUpInside" id="FPP-E6-iNz"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="fUJ-Da-OiR" secondAttribute="centerY" id="2ha-vU-ILj"/>
+                <constraint firstAttribute="trailing" secondItem="fUJ-Da-OiR" secondAttribute="trailing" constant="13" id="PDa-Ij-BiF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
     </objects>
 </document>
