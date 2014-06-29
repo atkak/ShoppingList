@@ -114,6 +114,7 @@
         self.addItemHeaderView.textField.text = nil;
         [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]]
                               withRowAnimation:UITableViewRowAnimationFade];
+        [self refreshItemsCount];
     }
     
     return NO;
@@ -136,6 +137,7 @@
             [self.items removeObject:item];
             [self.tableView deleteRowsAtIndexPaths:@[indexPath]
                                   withRowAnimation:UITableViewRowAnimationFade];
+            [self refreshItemsCount];
         }];
     }
 }
@@ -165,6 +167,7 @@
         self.addItemHeaderView.textField.text = nil;
         [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]]
                               withRowAnimation:UITableViewRowAnimationFade];
+        [self refreshItemsCount];
     }
     
     [self.addItemHeaderView.textField resignFirstResponder];
@@ -174,23 +177,23 @@
 
 - (IBAction)removeItemButtonDidTouch:(id)sender
 {
-    UIActionSheet *actionSheet = [UIActionSheet showInView:self.view
-                                                  withTitle:nil
-                                          cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
-                                     destructiveButtonTitle:NSLocalizedString(@"Remove All Items", nil)
-                                          otherButtonTitles:@[NSLocalizedString(@"Remove Completed Items", nil)]
-                                                   tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
-                                                       switch (buttonIndex) {
-                                                           case 0:
-                                                               [self removeAllItems];
-                                                               break;
-                                                           case 1:
-                                                               [self removeCompletedItems];
-                                                               break;
-                                                           default:
-                                                               break;
-                                                       }
-                                                   }];
+    [UIActionSheet showInView:self.view
+                    withTitle:nil
+            cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+       destructiveButtonTitle:NSLocalizedString(@"Remove All Items", nil)
+            otherButtonTitles:@[NSLocalizedString(@"Remove Completed Items", nil)]
+                     tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+                         switch (buttonIndex) {
+                             case 0:
+                                 [self removeAllItems];
+                                 break;
+                             case 1:
+                                 [self removeCompletedItems];
+                                 break;
+                             default:
+                                 break;
+                         }
+                     }];
 }
 
 - (IBAction)actionButtonDidTouch:(id)sender
@@ -205,7 +208,7 @@
     NSArray *itemList = [self.itemService fetchItemList];
     self.items = [itemList mutableCopy];
     [self.tableView reloadData];
-    self.itemCountLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%zd items", nil), self.items.count];
+    [self refreshItemsCount];
 }
 
 - (void)addShoppingItemForName:(NSString *)name
@@ -222,6 +225,7 @@
     [self.items removeAllObjects];
     
     [self.tableView reloadData];
+    [self refreshItemsCount];
 }
 
 - (void)removeCompletedItems
@@ -240,6 +244,12 @@
     }
     
     [self.tableView reloadData];
+    [self refreshItemsCount];
+}
+
+- (void)refreshItemsCount
+{
+    self.itemCountLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%zd items", nil), self.items.count];
 }
 
 @end
