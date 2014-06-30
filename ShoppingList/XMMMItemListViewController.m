@@ -298,14 +298,29 @@
     NSString *string = pasteboard.string;
     string = [string stringByReplacingOccurrencesOfString:@"\r\n"
                                                withString:@"\n"];
+    string = [string stringByReplacingOccurrencesOfString:@","
+                                               withString:@"\n"];
+    string = [string stringByReplacingOccurrencesOfString:@"."
+                                               withString:@"\n"];
+    string = [string stringByReplacingOccurrencesOfString:@"、"
+                                               withString:@"\n"];
+    string = [string stringByReplacingOccurrencesOfString:@"。"
+                                               withString:@"\n"];
     NSArray *strings = [string componentsSeparatedByString:@"\n"];
     
-    for (NSString *name in strings) {
-        [self addShoppingItemForName:name];
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        NSString *string = evaluatedObject;
+        return string.length != 0;
+    }];
+    NSArray *names = [strings filteredArrayUsingPredicate:predicate];
+    
+    for (NSString *name in names) {
+        NSString *trimmedName = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        [self addShoppingItemForName:trimmedName];
     }
     
     NSMutableArray *indexPaths = [NSMutableArray new];
-    for (NSInteger i = 0; i < strings.count; i++) {
+    for (NSInteger i = 0; i < names.count; i++) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
         [indexPaths addObject:indexPath];
     }
