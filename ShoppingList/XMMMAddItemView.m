@@ -30,7 +30,7 @@
                                                  inputViewStyle:UIInputViewStyleKeyboard];
     [inputView addSubview:self.inputAccessoryView];
     self.textField.inputAccessoryView = inputView;
-    self.textField.placeholder = NSLocalizedString(@"Enter item", nil);
+    self.textField.placeholder = NSLocalizedString(@"Add item", nil);
     self.textField.textColor = [UIColor colorWithWhite:(float)0x55 / 0xff alpha:1.0f];
     
     [self.doneButton setTitle:NSLocalizedString(@"Done", nil)

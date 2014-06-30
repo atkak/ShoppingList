@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  ShoppingList
+
+  Created by kakegawa.atsushi on 2014/06/30.
+  Copyright (c) 2014年 KAKEGAWA Atsushi. All rights reserved.
+*/
+"Remove Checked Items" = "チェック済みアイテムを削除";
+"Remove All Items" = "全てのアイテムを削除";
+"Cancel" = "キャンセル";
+"Add Items from Clipboard" = "クリップボードからアイテムを追加";
+"Add item" = "アイテムを追加";
+"Done" = "完了";
+"%zd items" = "%zd アイテム";

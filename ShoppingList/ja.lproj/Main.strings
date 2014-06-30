@@ -1,0 +1,9 @@
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "m9V-Ke-Lqb"; */
+"m9V-Ke-Lqb.text" = "Title";
+
+/* Class = "IBUINavigationItem"; title = "Root View Controller"; ObjectID = "rh7-r7-oKF"; */
+"rh7-r7-oKF.title" = "Root View Controller";
+
+/* Class = "IBUIBarButtonItem"; title = "Item"; ObjectID = "vfN-ue-fed"; */
+"vfN-ue-fed.title" = "Item";

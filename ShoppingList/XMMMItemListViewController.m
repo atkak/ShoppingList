@@ -58,8 +58,6 @@
     self.items = [NSMutableArray new];
     self.itemService = [XMMMItemPersistenceService new];
     
-    self.title = NSLocalizedString(@"Items", nil);
-    
     [self.tableView registerClass:[XMMMItemListTableViewCell class]
            forCellReuseIdentifier:@"CellIdentifier"];
     self.tableView.backgroundColor = [UIColor colorWithWhite:(float)0xf8 / 0xff alpha:1.0f];
@@ -181,7 +179,7 @@
                     withTitle:nil
             cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
        destructiveButtonTitle:NSLocalizedString(@"Remove All Items", nil)
-            otherButtonTitles:@[NSLocalizedString(@"Remove Completed Items", nil)]
+            otherButtonTitles:@[NSLocalizedString(@"Remove Checked Items", nil)]
                      tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
                          switch (buttonIndex) {
                              case 0:
