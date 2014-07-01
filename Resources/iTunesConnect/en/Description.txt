@@ -1,0 +1,18 @@
+QuickListing is a fairly simple shopping list.
+Just swipe an item, and you can mark an item as checked, quickly and easily.
+
+#Features:
+
+- Add items in succession.
+- Mark an item as checked by swipe gesture from left to right.
+- Remove an item by swipe gesture from right to left.
+- If you receive shopping list by SMS or Email App, you can add items from that.
+
+#A way of adding items from received messages
+
+QuickListing can add items by text which is on the clipboard. So you can add items by copying the shopping list on the clipboard. The text will be separated into items by new line or a special character.
+
+A special character is below.
+
+- comma
+- period
