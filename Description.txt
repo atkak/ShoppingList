@@ -1,0 +1,9 @@
+QuickListing is a fairly simple shopping list.
+Just swipe an item, and you can mark an item as checked, quickly and easily.
+
+#Features:
+
+- Add an item in succession.
+- Mark an item as checked by swipe gesture from left to right.
+- Remove an item by swipe gesture from right to left.
+- Add items from the clipboard.
