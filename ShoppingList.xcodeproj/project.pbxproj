@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0703B903E2194A56A74F3F27 /* libPods-ShoppingList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1008CD44A28345DBBD94386F /* libPods-ShoppingList.a */; };
+		C846B06B19DAFAF100257C78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C846B06A19DAFAF100257C78 /* AppDelegate.swift */; };
 		C8B3D8CB195E5EDB006213F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B3D8CA195E5EDB006213F3 /* Foundation.framework */; };
 		C8B3D8CD195E5EDB006213F3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B3D8CC195E5EDB006213F3 /* CoreGraphics.framework */; };
 		C8B3D8CF195E5EDB006213F3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B3D8CE195E5EDB006213F3 /* UIKit.framework */; };
 		C8B3D8D5195E5EDB006213F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8B3D8D3195E5EDB006213F3 /* InfoPlist.strings */; };
-		C8B3D8D7195E5EDB006213F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B3D8D6195E5EDB006213F3 /* main.m */; };
-		C8B3D8DB195E5EDB006213F3 /* XMMMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B3D8DA195E5EDB006213F3 /* XMMMAppDelegate.m */; };
 		C8B3D8DE195E5EDB006213F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B3D8DC195E5EDB006213F3 /* Main.storyboard */; };
 		C8B3D8E3195E5EDB006213F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8B3D8E2195E5EDB006213F3 /* Images.xcassets */; };
 		C8B3D8EA195E5EDB006213F3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B3D8E9195E5EDB006213F3 /* XCTest.framework */; };
@@ -47,16 +46,14 @@
 /* Begin PBXFileReference section */
 		1008CD44A28345DBBD94386F /* libPods-ShoppingList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShoppingList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA26B306CE024505A8BAF709 /* Pods-ShoppingList.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingList.xcconfig"; path = "Pods/Pods-ShoppingList.xcconfig"; sourceTree = "<group>"; };
+		C846B06919DAFAF000257C78 /* ShoppingList-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShoppingList-Bridging-Header.h"; sourceTree = "<group>"; };
+		C846B06A19DAFAF100257C78 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8B3D8C7195E5EDB006213F3 /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8B3D8CA195E5EDB006213F3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C8B3D8CC195E5EDB006213F3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C8B3D8CE195E5EDB006213F3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C8B3D8D2195E5EDB006213F3 /* ShoppingList-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShoppingList-Info.plist"; sourceTree = "<group>"; };
 		C8B3D8D4195E5EDB006213F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C8B3D8D6195E5EDB006213F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C8B3D8D8195E5EDB006213F3 /* ShoppingList-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShoppingList-Prefix.pch"; sourceTree = "<group>"; };
-		C8B3D8D9195E5EDB006213F3 /* XMMMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMMMAppDelegate.h; sourceTree = "<group>"; };
-		C8B3D8DA195E5EDB006213F3 /* XMMMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMMMAppDelegate.m; sourceTree = "<group>"; };
 		C8B3D8DD195E5EDB006213F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8B3D8E2195E5EDB006213F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C8B3D8E8195E5EDB006213F3 /* ShoppingListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,11 +150,11 @@
 				C8E5455C195FFC2F0050B870 /* Services */,
 				C8E5455D195FFC3D0050B870 /* Utils */,
 				C8E54559195FFBFD0050B870 /* Views */,
-				C8B3D8D9195E5EDB006213F3 /* XMMMAppDelegate.h */,
-				C8B3D8DA195E5EDB006213F3 /* XMMMAppDelegate.m */,
 				C8B3D8DC195E5EDB006213F3 /* Main.storyboard */,
 				C8B3D8E2195E5EDB006213F3 /* Images.xcassets */,
 				C8B3D8D1195E5EDB006213F3 /* Supporting Files */,
+				C846B06A19DAFAF100257C78 /* AppDelegate.swift */,
+				C846B06919DAFAF000257C78 /* ShoppingList-Bridging-Header.h */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -167,8 +164,6 @@
 			children = (
 				C8B3D8D2195E5EDB006213F3 /* ShoppingList-Info.plist */,
 				C8B3D8D3195E5EDB006213F3 /* InfoPlist.strings */,
-				C8B3D8D6195E5EDB006213F3 /* main.m */,
-				C8B3D8D8195E5EDB006213F3 /* ShoppingList-Prefix.pch */,
 				C8E5456519610A2D0050B870 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
@@ -375,7 +370,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8B3D8D7195E5EDB006213F3 /* main.m in Sources */,
 				C8E54553195E9B1E0050B870 /* XMMMItemListTableViewCellBackView.m in Sources */,
 				C8B3D90B195E6791006213F3 /* NSObject+KVO.m in Sources */,
 				C8B3D901195E5F18006213F3 /* XMMMItemListViewController.m in Sources */,
@@ -383,7 +377,7 @@
 				C8B3D907195E6102006213F3 /* XMMMShoppingItem.m in Sources */,
 				C8E54550195E91A20050B870 /* XMMMItemListTableViewCell.m in Sources */,
 				C8E54558195E9D130050B870 /* UIView+UINib.m in Sources */,
-				C8B3D8DB195E5EDB006213F3 /* XMMMAppDelegate.m in Sources */,
+				C846B06B19DAFAF100257C78 /* AppDelegate.swift in Sources */,
 				C8CCB1EA195E717A00B96378 /* XMMMAddItemView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,11 +516,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ShoppingList/ShoppingList-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "ShoppingList/ShoppingList-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ShoppingList/ShoppingList-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -537,11 +535,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ShoppingList/ShoppingList-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "ShoppingList/ShoppingList-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ShoppingList/ShoppingList-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
