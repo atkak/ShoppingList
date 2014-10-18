@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="oPi-ZR-TMh" customClass="XMMMAddItemView">
+        <view contentMode="scaleToFill" id="oPi-ZR-TMh" customClass="AddItemView" customModule="ShoppingList" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4d-hw-l0e">
                     <rect key="frame" x="10" y="8" width="300" height="28"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="m7R-cT-npr">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="m7R-cT-npr">
                             <rect key="frame" x="10" y="5" width="280" height="18"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="next"/>
                         </textField>
@@ -36,34 +35,26 @@
                 <constraint firstAttribute="trailing" secondItem="B4d-hw-l0e" secondAttribute="trailing" constant="10" id="YfU-8v-6um"/>
                 <constraint firstItem="B4d-hw-l0e" firstAttribute="leading" secondItem="oPi-ZR-TMh" secondAttribute="leading" constant="10" id="iVE-C8-v6O"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="doneButton" destination="fUJ-Da-OiR" id="fUu-VS-yID"/>
-                <outlet property="inputAccessoryView" destination="LKj-RR-zT1" id="2A2-Lm-mlA"/>
-                <outlet property="textField" destination="m7R-cT-npr" id="rdw-m8-wLG"/>
-                <outlet property="textFieldBackgroundView" destination="B4d-hw-l0e" id="FfE-WK-QPg"/>
+                <outlet property="accessoryView" destination="LKj-RR-zT1" id="77O-Gc-pxm"/>
+                <outlet property="doneButton" destination="fUJ-Da-OiR" id="X9N-T1-Mgt"/>
+                <outlet property="textField" destination="m7R-cT-npr" id="wdB-sx-YDE"/>
+                <outlet property="textFieldBackgroundView" destination="B4d-hw-l0e" id="wL9-ex-xCa"/>
             </connections>
         </view>
-        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="lMd-3W-Lho">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-            <items>
-                <barButtonItem style="plain" systemItem="flexibleSpace" id="MvX-sC-2CN"/>
-                <barButtonItem systemItem="done" id="L1T-xD-q6f"/>
-            </items>
-        </toolbar>
-        <view contentMode="scaleToFill" id="LKj-RR-zT1">
+        <view contentMode="scaleToFill" id="LKj-RR-zT1" customClass="UIInputView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUJ-Da-OiR">
                     <rect key="frame" x="261" y="7" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="doneButtonDidTouch:" destination="oPi-ZR-TMh" eventType="touchUpInside" id="FPP-E6-iNz"/>
+                        <action selector="doneButtonDidTouch:" destination="oPi-ZR-TMh" eventType="touchUpInside" id="kRr-zu-bm8"/>
                     </connections>
                 </button>
             </subviews>
@@ -72,7 +63,13 @@
                 <constraint firstAttribute="centerY" secondItem="fUJ-Da-OiR" secondAttribute="centerY" id="2ha-vU-ILj"/>
                 <constraint firstAttribute="trailing" secondItem="fUJ-Da-OiR" secondAttribute="trailing" constant="13" id="PDa-Ij-BiF"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

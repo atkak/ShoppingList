@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="Qrr-jy-OEF" customClass="XMMMItemListTableViewCellBackView">
+        <view contentMode="scaleToFill" id="Qrr-jy-OEF" customClass="ItemListTableViewCellBackView" customModule="ShoppingList" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDp-UL-GYD">
                     <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0NB-VJ-3Wd">
                     <rect key="frame" x="160" y="0.0" width="160" height="60"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_check" translatesAutoresizingMaskIntoConstraints="NO" id="Xgz-jr-L3d">
                     <rect key="frame" x="18" y="18" width="25" height="25"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="uY7-Qf-VCO"/>
                         <constraint firstAttribute="width" constant="25" id="v0q-8m-JIB"/>
@@ -30,7 +28,6 @@
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cross" translatesAutoresizingMaskIntoConstraints="NO" id="EBf-Vx-dD9">
                     <rect key="frame" x="282" y="20" width="20" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="dMH-6o-89I"/>
                         <constraint firstAttribute="height" constant="20" id="gqF-vg-Cpo"/>
@@ -52,10 +49,11 @@
                 <constraint firstItem="0NB-VJ-3Wd" firstAttribute="width" secondItem="XDp-UL-GYD" secondAttribute="width" id="twS-1A-BGk"/>
                 <constraint firstAttribute="centerY" secondItem="Xgz-jr-L3d" secondAttribute="centerY" id="v2I-sf-pZr"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="completeBackgroundView" destination="XDp-UL-GYD" id="0dI-ij-tkq"/>
-                <outlet property="deleteBackgroundView" destination="0NB-VJ-3Wd" id="Xel-0W-F9L"/>
+                <outlet property="completeBackgroundView" destination="XDp-UL-GYD" id="8vx-Tt-slk"/>
+                <outlet property="deleteBackgroundView" destination="0NB-VJ-3Wd" id="POZ-0A-s0I"/>
             </connections>
         </view>
     </objects>
@@ -63,4 +61,9 @@
         <image name="icon_check" width="68" height="47"/>
         <image name="icon_cross" width="48" height="48"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

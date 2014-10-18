@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Poq-CP-tST">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Poq-CP-tST">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Item List View Controller - Root View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="1W3-xy-xTu">
             <objects>
-                <tableViewController id="4o9-Gp-ZV2" customClass="XMMMItemListViewController" sceneMemberID="viewController">
+                <tableViewController id="4o9-Gp-ZV2" customClass="ItemListViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sIk-Ty-Juw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellIdentifier" textLabel="m9V-Ke-Lqb" style="IBUITableViewCellStyleDefault" id="J7c-Ea-AaM" customClass="XMMMItemListTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellIdentifier" textLabel="m9V-Ke-Lqb" style="IBUITableViewCellStyleDefault" id="J7c-Ea-AaM" customClass="ItemListTableViewCell" customModule="ShoppingList" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J7c-Ea-AaM" id="Ioj-uW-bcL">
@@ -32,14 +32,14 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="4o9-Gp-ZV2" id="iME-jt-Xh9"/>
-                            <outlet property="delegate" destination="4o9-Gp-ZV2" id="f1g-qp-upm"/>
+                            <outlet property="dataSource" destination="4o9-Gp-ZV2" id="Ofa-C0-ZIZ"/>
+                            <outlet property="delegate" destination="4o9-Gp-ZV2" id="YYu-Jv-qLp"/>
                         </connections>
                     </tableView>
                     <toolbarItems>
                         <barButtonItem systemItem="trash" id="eKW-vV-WHC">
                             <connections>
-                                <action selector="removeItemButtonDidTouch:" destination="4o9-Gp-ZV2" id="bal-d8-EgZ"/>
+                                <action selector="removeItemButtonDidTouch:" destination="4o9-Gp-ZV2" id="93M-g8-fNs"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Fhh-l6-l5R"/>
@@ -47,13 +47,13 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="1zV-Kj-kht"/>
                         <barButtonItem systemItem="action" id="WzD-DH-G0B">
                             <connections>
-                                <action selector="actionButtonDidTouch:" destination="4o9-Gp-ZV2" id="i7h-nY-yuD"/>
+                                <action selector="actionButtonDidTouch:" destination="4o9-Gp-ZV2" id="64r-CH-JNC"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Root View Controller" id="rh7-r7-oKF"/>
                     <connections>
-                        <outlet property="itemCountLabelButton" destination="vfN-ue-fed" id="TGy-9a-Zhb"/>
+                        <outlet property="itemCountLabelButton" destination="vfN-ue-fed" id="ald-Jv-DVn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUE-En-UYz" userLabel="First Responder" sceneMemberID="firstResponder"/>
