@@ -237,7 +237,7 @@ class ItemListViewController: UITableViewController, UITextFieldDelegate,
     
     private func refreshItemsCount() {
         let itemString = NSLocalizedString("items", comment: "")
-        self.itemCountLabel.text = "\(self.items.count) items \(itemString)"
+        self.itemCountLabel.text = "\(self.items.count) \(itemString)"
     }
     
     private func addShoppingItemsFromPasteboard() {
