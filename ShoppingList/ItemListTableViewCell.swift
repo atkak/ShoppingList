@@ -24,11 +24,11 @@ class ItemListTableViewCell: RMSwipeTableViewCell {
             _completed = completed
             
             if completed {
-                self.textLabel?.textColor = UIColor.lightGrayColor()
-                self.imageView?.image = UIImage(named: "check_selected")
+                self.textLabel.textColor = UIColor.lightGrayColor()
+                self.imageView.image = UIImage(named: "check_selected")
             } else {
-                self.textLabel?.textColor = UIColor(white: 0x55 / 0xff, alpha: 1.0)
-                self.imageView?.image = UIImage(named: "check_normal")
+                self.textLabel.textColor = UIColor(white: 0x55 / 0xff, alpha: 1.0)
+                self.imageView.image = UIImage(named: "check_normal")
             }
         }
     }
@@ -38,11 +38,11 @@ class ItemListTableViewCell: RMSwipeTableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.imageView?.image = UIImage(named: "check_normal")
+        self.imageView.image = UIImage(named: "check_normal")
         self.backgroundView?.backgroundColor = UIColor(white: 0xf8 / 0xff, alpha: 1.0)
         self.contentView.backgroundColor = UIColor(white: 0xf8 / 0xff, alpha: 1.0)
-        self.textLabel?.textColor = UIColor(white: 0x55 / 0xff, alpha: 1.0)
-        self.textLabel?.backgroundColor = UIColor.clearColor()
+        self.textLabel.textColor = UIColor(white: 0x55 / 0xff, alpha: 1.0)
+        self.textLabel.backgroundColor = UIColor.clearColor()
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -58,7 +58,7 @@ class ItemListTableViewCell: RMSwipeTableViewCell {
             actualBackView.completeBackgroundView.alpha = 0.0
             actualBackView.deleteBackgroundView.alpha = 0.0
         }
-        self.imageView?.image = UIImage(named: "check_normal")
+        self.imageView.image = UIImage(named: "check_normal")
     }
     
     override func animateContentViewForPoint(point: CGPoint, velocity: CGPoint) {

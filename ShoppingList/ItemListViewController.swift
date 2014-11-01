@@ -69,7 +69,7 @@ class ItemListViewController: UITableViewController, UITextFieldDelegate,
         
         let item = self.items[indexPath.row]
         
-        cell.textLabel?.text = item.name
+        cell.textLabel.text = item.name
         cell.completed = item.completed
         
         cell.delegate = self
